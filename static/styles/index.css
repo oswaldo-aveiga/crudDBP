@@ -1,0 +1,178 @@
+/* Establecemos una tipografía moderna y limpia */
+body {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #fff;
+    font-family: ui-sans-serif,system-ui,Segoe UI,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+    background-color: #000;
+    }
+}
+
+input::placeholder{
+    font-family: ui-sans-serif,system-ui,Segoe UI,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+
+
+h2{
+    margin-top: 0;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: auto;
+
+
+}
+
+h1,h2{
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+@media (prefers-color-scheme: dark){
+    h1,h2{
+        color: #fff;
+    }
+}
+
+
+
+
+
+/* Mensajes flash */
+.flash-message {
+    font-size: 50px; /* Tamaño de fuente grande */
+    background-color: #458ee2;
+    color: #28a3c9;
+    padding: 20px 40px; /* Asegura que el mensaje sea más grande */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: fixed; /* Para que esté fijo en la pantalla */
+    top: 10%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Para ajustar el centro exacto */
+    z-index: 9999; /* Asegura que esté sobre otros elementos */
+    opacity: 1; /* Inicialmente visible */
+    transition: opacity 0.5s ease-out; /* Suaviza la desaparición */
+}
+
+form{
+    padding: 20px;
+    text-align: center;
+    border-color: #59636e;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+    width: 500px;
+}
+   
+
+@media (prefers-color-scheme: dark){
+    form{
+        border-color: #59636e;
+        background-color: #000;
+       
+    }
+}
+
+form input{
+    padding: 5px 12px;
+    width: 450px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style:  solid;
+    
+    background-color: #fff;
+    color: #000;
+}
+ .enviar{
+    background-color: #28a3c9;
+    color: #fff;
+    border: none;
+ }
+ .enviar:hover{
+    background-color: #2691b8;
+ }
+
+/*
+font-size: 14px;
+    
+    
+*/
+
+
+
+
+
+
+
+
+p{
+    font-family: ui-sans-serif,system-ui,Segoe UI,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+@media (prefers-color-scheme: dark){
+    p{
+        color: #fff;
+    }
+}
+
+
+a{
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+
+}
+a:hover {
+    background-color: #d94f26;
+}
+
+
+
+
+
+.delete-btn {
+    background-color: #d15422;
+    
+}
+
+
+
+.update-btn {
+    background-color: #22ca38;
+}
+
+
+/*reportes */
+.reportespdf {
+    background-color: #E60012;
+    
+}
+
+.reportesexel {
+    background-color: #217346;
+    
+}
+
+.reportestxt {
+    background-color: #7ED321;
+    
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contactos</title>
+    <!-- Vinculamos correctamente el archivo CSS -->
+    <link rel="stylesheet" href="/static/styles/index.css">
+</head>
+<body>
+
+    
+    <header>
+        <h1>Lista de Contactos</h1>
+    </header>
+
+    <!-- Mostrar mensajes flash (si existen) -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <script>
+        // Esperar a que el DOM esté listo
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const flashMessage = document.querySelector('.flash-message');
+            
+            if (flashMessage) {
+                setTimeout(() => {
+                    // Cambiar la opacidad a 0 para hacer que desaparezca
+                    flashMessage.style.opacity = 0;
+                }, 2000); // Desaparece después de 2 segundos (2000ms)
+            }
+        });
+    </script>
+    
+
+    <!-- Formulario para agregar un nuevo contacto -->
+    <div class="agregarContacto">
+        <form action="/new" method="POST">
+            <h2>Agregar un nuevo contacto</h2>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <p></p>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <p></p>
+            <input type="text" name="phone" placeholder="Teléfono" required>
+            <p></p>
+            <input class="enviar" type="submit" value="Guardar">
+        </form>
+
+    </div>
+        
+
+
+    <!-- Mostrar la lista de contactos -->
+    <div class="contactos">
+        <h2>Contactos</h2>
+        {% for contact in contacts_list %}
+        <div class="contctosBotones">
+            <a href="{{ url_for('contacts.delete', id=contact.id) }}" class="delete-btn">Eliminar</a>
+            <a href="{{ url_for('contacts.update', id=contact.id) }}" class="update-btn">Actualizar</a>
+
+        </div>
+        <div class="contactosRegistros">
+            <p>{{ contact.name }}-----{{ contact.email }}-----{{ contact.phone }}</p>
+        </div> 
+        {% endfor %}
+    </div>
+
+
+
+    <!-- Sección para generar reportes -->
+    <div class="reportes">
+        <h2>Generar Reportes</h2>
+        
+      <a class="reportespdf" href="{{ url_for('contacts.reporte_pdf') }}">Generar Reporte en PDF</a> 
+      <a class="reportesexel" href="{{ url_for('contacts.reporte_excel') }}">Generar Reporte en Excel</a> 
+      <a class="reportestxt" href="{{ url_for('contacts.reporte_txt') }}">Generar Reporte en TXT</a> 
+        
+    
+    
+
+
+</body>
+</html>

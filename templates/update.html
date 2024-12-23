@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/update.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Actualizar contacto</h1>
+    <form action="/update/{{contact.id}}" method="POST">
+        <input type="text" name="name" placeholder="nombre" value="{{contact.name}}">
+        <p></p>
+        <input type="email" name="email" placeholder="email" value="{{contact.email}}">
+        <p></p>
+        <input type="text" name="phone" placeholder="telefono" value="{{contact.phone}}">
+        <p></p>
+        <input class="enviar" type="submit" value="actualizar">
+    </form>
+    
+</body>
+</html>
+
+
+
+
